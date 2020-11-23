@@ -6,7 +6,7 @@ public class Searching {
 	public static boolean searchItem(node n, String i)
 	{
 		//check it the string is empty
-		if(i == null || i == null)
+		if(n == null || i == null)
 				return false;
 		//check if the string is searching by id or name of the item
 		//check if the string is number
@@ -69,7 +69,7 @@ public class Searching {
 	public static boolean searchThruCat(node n, String cat)
 	{
 		//checks if the node is empty
-		if(cat == null || cat == null)
+		if(n == null || cat == null)
 			return false;
 		node temp = n; 
 		System.out.println("Catogory ");
@@ -93,10 +93,10 @@ public class Searching {
 			}
 				temp = temp.getLink();
 		}
-		//if item cannot be found under that catergry
+		//if item cannot be found under that category
 		if(em == false)
 		{
-			System.out.println("Sorry no items is found unber that catorgry");
+			System.out.println("Sorry no items is found under that category");
 			return false;
 		}
 		return true;
