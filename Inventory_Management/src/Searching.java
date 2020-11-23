@@ -96,7 +96,7 @@ public class Searching {
 		//if item cannot be found under that catergry
 		if(em == false)
 		{
-			System.out.println("Sorry no item is found unber that catorgry");
+			System.out.println("Sorry no items is found unber that catorgry");
 			return false;
 		}
 		return true;

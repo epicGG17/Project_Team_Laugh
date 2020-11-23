@@ -67,7 +67,7 @@ public class SeachingTest {
 		arr.addItem("TV", "vizio", 99.99, 4499, 5);
 		arr.addItem("TV", "LG", 59.99, 4563, 6);
 		arr.addItem("laptop", "acer", 699.99, 7896, 10);
-		arr.addItem("phone", "apple x", 999.99, 0001, 9);
+		arr.addItem("phone", "apple IX", 999.99, 0001, 9);
 		arr.addItem("tablet", "air", 899.99, 4456, 8);
 		//checking if Cat can be found
 		t = Searching.searchThruCat(arr.getFirst(), "TV");
