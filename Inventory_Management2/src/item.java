@@ -127,6 +127,24 @@ public class item {
         	last = prev;
         size--;
     } 
+    
+    public void change(node a, int idNum) 
+    {  
+        node temp = first, prev = null; 
+        if (temp != null && temp.getID() == idNum) 
+        { 
+            first = a; // Changed head 
+            return; 
+        } 
+        while (temp != null && temp.getID() != idNum) 
+        { 
+            prev = temp; 
+            temp = temp.getLink(); 
+        }     
+        if (temp == null) return;
+        a.setLink(temp.getLink());
+        prev.setLink(a);
+    } 
 	
 	public boolean searchIf(int x) 
     { 
