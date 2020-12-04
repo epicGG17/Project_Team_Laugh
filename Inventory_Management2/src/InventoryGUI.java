@@ -137,7 +137,7 @@ public class InventoryGUI implements ActionListener, ItemListener {
 				check = newCategory.getText();
 				if (check.isEmpty() == true)
 				{
-					inventory.print();
+					//inventory.print();
 				}
 				if (count != 0)
 				{

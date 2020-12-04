@@ -23,6 +23,8 @@ public class file {
 			arritem.addItem(node);
 		}
 		
+		scanFile.close();
+		
 	}
 	
 	//writes to a different file so the original isn't overwritten

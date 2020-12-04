@@ -90,21 +90,4 @@ public class methodTest {
         assertEquals("test delete method", count ,arr.getSize());
     }
 
-	@Test
-    public void testprint(){
-        String c = "laptop";
-        String n = "Sasmsung";
-        double p = 10.9;
-        int i = 1234;
-        int q = 4;
-        
-        node testNode = new node(c, n, p, i, q);
-        
-        item arr = new item();
-        arr.addItem(c, n, p, i, q);
-        arr.addItem(c, n, p+1, i+1, q);
-
-        arr.print();
-    }
-	
 }
