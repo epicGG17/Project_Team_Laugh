@@ -38,21 +38,6 @@ public class file {
 		
 	}
 	
-	//writes to a different file so the original isn't overwritten
-	public void writeFile(item arritem) throws IOException {
-		
-		FileWriter fw = new FileWriter(wfile);
-		PrintWriter pw = new PrintWriter(fw);
-		
-		node temp = arritem.getFirst();
-		
-		while(temp!= null) {
-			syntax(pw, temp);
-			temp = temp.getLink();
-		}
-		
-		pw.close();
-	}
 	
 	// overwrites the original file with the new content
 	public static void saveFile(item arritem) throws IOException {

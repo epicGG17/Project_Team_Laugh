@@ -7,8 +7,18 @@ TV sAMSUNG 20.99 6 14
 TV LG-CX 20.99 7 10
 Console Ps5 20.99 8 10
 Console Xbox-One 499.99 9 22
-<<<<<<< HEAD
 Console Wii 149.99 10 22
-=======
-Console Wii 149.99 9 22
->>>>>>> branch 'master' of https://github.com/epicGG17/Project_Team_Laugh.git
+laptop Dell-Inspiron 1049.99 11 16
+laptop HP-Spectrex360 1699.99 12 8
+laptop Hp-Pavillion 649.99 13 10
+laptop Lenovo-Yoga 949.99 14 12
+laptop Asus-15.6" 949.99 15 5
+monitor Dell-27" 119.99 16 9
+monitor Samsung-t350Series 89.99 17 11
+monitor HP-X24ih 149.99 18 2
+monitor Samsung-CRG5 279.99 19 5
+monitor LG-34WL500 249.99 20 3
+earbuds Skullcandy-SeshEvo 29.99 21 21
+headphones Sony-WH1000 298.99 22 16
+headphones Beats-SoloPro 179.99 23 12
+headphones Bose-QuietComfort34 269.99 24 7
