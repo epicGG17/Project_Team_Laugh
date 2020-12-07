@@ -6,13 +6,24 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class file {
+	
+	private static file instance = new file();
+	private static File fileview = new File("fullinv.txt");
+	private static File wfile = new File("fullinvW.txt");
+	
+	private file() {
+	}
+	
+	public static file getInstance() {
+		return instance;
+	}
 
 	//scans the file and inserts items into linked list
-	public static void scanFile(item arritem) throws FileNotFoundException {
+	public void scanFile(item arritem) throws FileNotFoundException {
 		
 		// sets file to the input file,  then scans the file with scanfile
-		File file = new File("fullinv.txt");
-		Scanner scanFile = new Scanner(file);
+		//File file = new File("fullinv.txt");
+		Scanner scanFile = new Scanner(fileview);
 		
 		// while there is still content on the line
 		while (scanFile.hasNext()) {
@@ -28,54 +39,48 @@ public class file {
 	}
 	
 	//writes to a different file so the original isn't overwritten
-	public static void writeFile(item arritem) throws IOException {
+	public void writeFile(item arritem) throws IOException {
 		
-
-		File file = new File("fullinvW.txt");
-		FileWriter fw = new FileWriter(file);
+		FileWriter fw = new FileWriter(wfile);
 		PrintWriter pw = new PrintWriter(fw);
 		
 		node temp = arritem.getFirst();
 		
 		while(temp!= null) {
-				pw.print(temp.getCategory() + " ");
-				pw.print(temp.getName() + " ");
-				pw.print(temp.getPrice() + " ");
-				pw.print(temp.getID() + " ");
-				pw.print(temp.getQuantity() + "\n");
-				
-				temp = temp.getLink();
-				
+			syntax(pw, temp);
+			temp = temp.getLink();
 		}
 		
 		pw.close();
 	}
 	
-	
 	// overwrites the original file with the new content
 	public static void saveFile(item arritem) throws IOException {
-		File file = new File("fullinv.txt");
-		FileWriter fw = new FileWriter(file);
+		//File file = new File("fullinv.txt");
+		FileWriter fw = new FileWriter(fileview);
 		PrintWriter pw = new PrintWriter(fw);
 		
 		node temp = arritem.getFirst();
 		
 		// writes to the new file
 		while(temp!= null) {
-				pw.print(temp.getCategory() + " ");
-				pw.print(temp.getName() + " ");
-				pw.print(temp.getPrice() + " ");
-				pw.print(temp.getID() + " ");
-				pw.print(temp.getQuantity() + "\n");
-				
-				temp = temp.getLink();
-				
+			syntax(pw, temp);
+			temp = temp.getLink();
 		}
 		
 		//closes the file so the work is saved
 		pw.close();
 	}
 	
+	
+	public static void syntax(PrintWriter pw, node temp) {
+		pw.print(temp.getCategory() + " ");
+		pw.print(temp.getName() + " ");
+		pw.print(temp.getPrice() + " ");
+		pw.print(temp.getID() + " ");
+		pw.print(temp.getQuantity() + "\n");
+		
+	}
 		
 	//
 
