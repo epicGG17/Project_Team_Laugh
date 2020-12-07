@@ -302,6 +302,7 @@ public class InventoryGUI implements ActionListener, ItemListener {
 							else
 							{
 								search.setID(adjustID);
+								searchID = adjustID;
 								message2.setText("");
 							}
 						}
