@@ -1,5 +1,6 @@
 //linked list, with methods to interact with the nodes
-public class item {	
+import java.util.Iterator;
+public class item implements Iterable<node>{	
 	
 	//attributes
 	private node first;
@@ -64,37 +65,6 @@ public class item {
 		}
 	}
 	
-	//search an id number and delete an object with matching id num
-	/*public void delete(int idNum) {
-		boolean found = false;
-		if(first.getID() == idNum) {
-			first = null;
-			found = true;
-		}
-		else {
-			node trail = first;
-			node temp = first.getLink();
-			while(temp!=null) {
-				if(temp.getID() == idNum) {
-					trail.setLink(temp.getLink());
-					temp = null;
-					found = true;
-					break;
-				}
-				else {
-					temp = temp.getLink();
-					trail = trail.getLink();
-				}
-			}
-		}
-		if(found) {
-			System.out.println("Item with id number " + idNum + " has been deleted");
-			size--;
-		}
-		else {
-			System.out.println("Item with id number " + idNum + " not found");
-		}
-	}*/
 	
     public void delete(int idNum) 
     { 
@@ -158,37 +128,23 @@ public class item {
         return false;    //data not found 
     } 
 	
-	
+	//Iterator implementation of search
 	public node search(int x) 
     { 
-        node current = first;    //Initialize current 
-        while (current != null) 
-        { 
+        Iterator<node> test = this.iterator();
+        while (test.hasNext()) 
+        {
+        	node current = test.next();
             if (current.getID() == x) 
                 return current;    //data found 
-            current = current.getLink(); 
         } 
         return null;    //data not found 
     } 
 	
-	
-	//print all info in each node of the list
-	public void print() {
-		node temp = first;
-		System.out.println("Number of items in inventory: " + size);
-		if(size == 0) {
-			System.out.print("List is empty");
-		}
-		else {
-			while(temp!= null) {
-				System.out.print("Category: " + temp.getCategory() + ", ");
-				System.out.print("Name: " + temp.getName() + ", ");
-				System.out.print("Price: " + temp.getPrice() + ", ");
-				System.out.print("ID: " + temp.getID() + ", ");
-				System.out.print("Quantity: " + temp.getQuantity() + "\n");
-				
-				temp = temp.getLink();
-			}		
-		}		
+	//Iterator class
+	@Override
+	public Iterator<node> iterator() {
+		return new itemIterator(this);
 	}
+
 }

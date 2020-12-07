@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 public class InventoryGUI implements ActionListener, ItemListener {
 	static JButton B;
 	static ActionListener AL = new InventoryGUI();
@@ -137,7 +138,7 @@ public class InventoryGUI implements ActionListener, ItemListener {
 				check = newCategory.getText();
 				if (check.isEmpty() == true)
 				{
-					inventory.print();
+					//inventory.print();
 				}
 				if (count != 0)
 				{
@@ -301,6 +302,7 @@ public class InventoryGUI implements ActionListener, ItemListener {
 							else
 							{
 								search.setID(adjustID);
+								searchID = adjustID;
 								message2.setText("");
 							}
 						}
@@ -403,6 +405,12 @@ public class InventoryGUI implements ActionListener, ItemListener {
 				break;
 			
 			case "Exit":
+				//replaces old txt file with a new one with the edited list info
+				try {
+					file.saveFile(inventory);
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
 				System.exit(0);
 				break;
 						

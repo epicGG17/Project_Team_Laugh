@@ -23,6 +23,8 @@ public class file {
 			arritem.addItem(node);
 		}
 		
+		scanFile.close();
+		
 	}
 	
 	//writes to a different file so the original isn't overwritten
@@ -70,11 +72,11 @@ public class file {
 				
 		}
 		
-//closes the file so the work is saved
+		//closes the file so the work is saved
 		pw.close();
 	}
 	
 		
-
+	//
 
 }
