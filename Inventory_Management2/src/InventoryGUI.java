@@ -60,6 +60,7 @@ public class InventoryGUI implements ActionListener, ItemListener {
 		frm.setVisible(true);
 
 	}
+	
 	//Creates the second window
 	public static void createFrame()
 	{
@@ -68,7 +69,7 @@ public class InventoryGUI implements ActionListener, ItemListener {
 		contentPane = frm2.getContentPane();
 		contentPane.setLayout(new BorderLayout());
 		frm2.pack();
-		frm2.setSize(900,500);
+		frm2.setSize(1000,1000);
 		frm2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frm2.setVisible(true);
 	}

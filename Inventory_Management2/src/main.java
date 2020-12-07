@@ -7,20 +7,20 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class main {
+	static item arr = new item();
+	static file File = file.getInstance();
 	
 	public static void main(String[] args) throws IOException {
 		//creates linked list
-		item arr = new item();
-		file.scanFile(arr);
+		
+		File.scanFile(arr);
 		
 		//test write file
-	    arr.addItem("Console", "Xbox-One", 499.99, 9, 22);
-		arr.addItem("Console", "Wii", 149.99, 9, 22);
-		file.writeFile(arr);
+		File.writeFile(arr);
 		InventoryGUI.Start(arr);
 		
 		//as
-		askSave(arr);
+		//askSave(arr);
 		
 	}
 	
@@ -32,7 +32,7 @@ public class main {
 		
 		switch(s) {
 		  case "YES":
-			file.writeFile(arr);
+			File.writeFile(arr);
 			  file.saveFile(arr);
 			  System.out.println("File was saved.");
 		      break;
